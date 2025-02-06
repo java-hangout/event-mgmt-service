@@ -20,13 +20,13 @@ public class Event {
     private String title;
     private String description;
     private String type; //ACHIEVEMENT, TOWNHALL, CULTURAL_ACTIVITY
-    private LocalDateTime date;
-    private boolean isActive;
+//    private LocalDateTime date;
+    private boolean eventActiveFlag;
 
 //    private String departmentId;           // Reference to the department the task belongs to (Many-to-One)
 //    private String departmentName;           // Reference to the department the task belongs to (Many-to-One)
-    private String businessUnitId;
-//    private String businessUnitName;
+//    private String businessUnitId;
+    private String businessUnitName;
     @CreatedDate
     private Date createdDate;  // Stores the date when the record was created
     @LastModifiedDate

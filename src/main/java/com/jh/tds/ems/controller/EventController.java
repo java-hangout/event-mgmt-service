@@ -23,6 +23,11 @@ public class EventController {
         return eventService.getActiveEvents();
     }
 
+    @GetMapping("/fetch/bu/{buName}")
+    public List<Event> getAllBUActiveEvents(@PathVariable String buName) {
+        return eventService.getBUActiveEvents(buName);
+    }
+
     @GetMapping("/fetch/all")
     public List<Event> getAllEvents() {
         return eventService.getAllEvents();

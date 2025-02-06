@@ -18,9 +18,12 @@ public class EventService {
     }
 
     public List<Event> getActiveEvents() {
-        return eventRepository.findByIsActiveTrue();
+        return eventRepository.findByEventActiveFlag();
     }
+    public List<Event> getBUActiveEvents(String businessUnitName){
+        return eventRepository.findByBusinessUnitName(businessUnitName);
 
+    }
     public List<Event> getAllEvents() {
         return eventRepository.findAll();
     }
@@ -36,7 +39,7 @@ public class EventService {
     public void deactivateEvent(String id) {
         Event event = eventRepository.findById(id).orElse(null);
         if (event != null) {
-            event.setActive(false);
+            event.setEventActiveFlag(false);
             eventRepository.save(event);
         }
     }
